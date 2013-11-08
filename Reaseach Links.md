@@ -1,13 +1,13 @@
-# Useful Gems & APIs for Project (Gem Name, Docs, and Description) 
-
+# Useful Gems & APIs
 
 [ Ruby Github API 1 OCTOKIT ] ( https://github.com/octokit/octokit.rb )
+
 [ Ruby Github API 2 PETER MURACH ] ( https://github.com/peter-murach/github )
 
 
 
 
-# Important Links for Project Tools
+# Important Links & Project Tools
 
 
 
