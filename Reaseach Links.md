@@ -17,3 +17,8 @@
 
 
 # Misc Helpful Resources 
+
+[Tips for Reading Code](http://c2.com/cgi/wiki?TipsForReadingCode)
+
+- A high-level overview of what you can do to improve your programming skills by reading code.
+- The latter half of the list is something we could likely focus on.
