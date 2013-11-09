@@ -36,6 +36,9 @@ group :development do
   gem 'pry-rails'
 end
 
+# For Github API
+gem 'octokit', '~> 2.0'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
