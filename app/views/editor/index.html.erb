@@ -1,15 +1,14 @@
 <h1>Ace Test — Editor#index</h1>
 
- <pre id="editor">function foo(items) {
-    var i;
-    for (i = 0; i &lt; items.length; i++) {
-        alert("Ace Rocks " + items[i]);
-    }
-  }</pre>
-  
-  <script src="assets/javascripts/ace.js" type="text/javascript" charset="utf-8"></script>
-  <script>
-    var editor = ace.edit("editor");
-    editor.setTheme("ace/theme/twilight");
-    editor.getSession().setMode("ace/mode/javascript");
-  </script>
+ <pre id="editor">def foo(items)
+  items.each { |item| puts "Ace Rocks #{item}" }
+end
+</pre>
+    
+ <script src="http://d1n0x3qji82z53.cloudfront.net/src-min-noconflict/ace.js" charset="utf-8"></script>
+ <script>
+   var editor = ace.edit("editor");
+   editor.getSession().setUseWorker(false);
+   editor.setTheme("ace/theme/monokai");
+   editor.getSession().setMode("ace/mode/ruby");
+</script>
