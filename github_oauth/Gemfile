@@ -1,0 +1,14 @@
+source "http://rubygems.org"
+
+gem "json"     
+gem 'sinatra'  
+gem 'rest-client'
+gem 'sinatra_auth_github' 
+gem 'pry'
+gem 'sinatra'
+gem 'sinatra-reloader'
+gem 'dotenv'
+gem 'octokit'
+gem "github_api"
+
+
