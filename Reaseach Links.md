@@ -6,6 +6,13 @@
 
 
 
+# Links for Teamwork on Git
+-https://www.atlassian.com/git/workflows 
+-http://joslynesser.com/blog/archives/2010/09/06/git-workflow-for-small-teams/
+-http://programmers.stackexchange.com/questions/153282/using-git-correctly-in-a-small-team
+-David likes this one: http://nvie.com/posts/a-successful-git-branching-model/
+
+http://kentnguyen.com/development/visualized-git-practices-for-team/
 
 # Important Links & Project Tools
 
