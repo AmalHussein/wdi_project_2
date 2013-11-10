@@ -1,12 +1,6 @@
-class OathuController < ApplicationController 
-
-	require 'sinatra/auth/github'
-	require 'rest-client'
-	require 'pry'
-	require 'github_api'
-	require 'octokit'
-
-	require 'temboo'
+require 'temboo'
+require 'Library/Github'
+require 'openssl'
 
 	def initialize()
 		@session = TembooSession.new("amalhussein", "myFirstApp", "e50c2e0d-5067-45fa-a")
@@ -32,7 +26,7 @@ def final_oauth
 
 # Instantiate the Choreo, using a previously instantiated TembooSession object, eg:
 # session = TembooSession.new("amalhussein", "APP_KEY_NAME", "APP_KEY_VALUE")
-@finalizeOAuthChoreo = GitHub::OAuth::FinalizeOAuth.new(session)
+@finalizeOAuthChoreo = GitHub::OAuth::FinalizeOAuth.new(@session)
 
 # Get an InputSet object for the choreo
 @finalizeOAuthInputs = @finalizeOAuthChoreo.new_input_set()
@@ -45,8 +39,13 @@ def final_oauth
 # Execute Choreo
 @finalizeOAuthResults = @finalizeOAuthChoreo.execute(@finalizeOAuthInputs)
 
-
 end 
+
+puts initial_oauth
+
+puts final_oauth 
+
+
 
 # # Instantiate the Choreo, using a previously instantiated TembooSession object, eg:
 # session = TembooSession.new("amalhussein", "myFirstApp", "e50c2e0d-5067-45fa-a")
@@ -84,17 +83,17 @@ end
 
 
 
-# # module Example
-# #   class MyBasicApp < Sinatra::Base
-# #     # !!! DO NOT EVER USE HARD-CODED VALUES IN A REAL APP !!!
-# #     # Instead, set and test environment variables, like below
+# module Example
+#   class MyBasicApp < Sinatra::Base
+#     # !!! DO NOT EVER USE HARD-CODED VALUES IN A REAL APP !!!
+#     # Instead, set and test environment variables, like below
     
-# #     # if ENV['GITHUB_CLIENT_ID'] && ENV['GITHUB_CLIENT_SECRET']
-# #     #  CLIENT_ID        = ENV['GITHUB_CLIENT_ID']
-# #     #  CLIENT_SECRET    = ENV['GITHUB_CLIENT_SECRET']
-# #     # end
+#     # if ENV['GITHUB_CLIENT_ID'] && ENV['GITHUB_CLIENT_SECRET']
+#     #  CLIENT_ID        = ENV['GITHUB_CLIENT_ID']
+#     #  CLIENT_SECRET    = ENV['GITHUB_CLIENT_SECRET']
+#     # end
 
-# #     CLIENT_ID = '8476104fa8cf26b28392'
+#     CLIENT_ID = '8476104fa8cf26b28392'
 #     CLIENT_SECRET = '8802502e1d7cc5b5418777a2e2e99634a0ac273d'
 
 #     # binding.pry
@@ -143,5 +142,4 @@ end
 #   end
 # end
 
-end 
-
+# end 
