@@ -1,10 +1,11 @@
-class CreateReferenceTable < ActiveRecord::Migration
+class CreateReferences < ActiveRecord::Migration
   def change
-    create_table :reference_tables do |t|
+    create_table :references do |t|
     	t.string :gem_name
     	t.string :url 
     	t.string :frequency
-    	t.string :catagory
+    	t.string :category
+        t.text   :description
     	t.string :color
     	t.timestamps
     end

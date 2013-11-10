@@ -16,11 +16,12 @@ ActiveRecord::Schema.define(version: 20131110231556) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "reference_tables", force: true do |t|
+  create_table "references", force: true do |t|
     t.string   "gem_name"
     t.string   "url"
     t.string   "frequency"
-    t.string   "catagory"
+    t.string   "category"
+    t.text     "description"
     t.string   "color"
     t.datetime "created_at"
     t.datetime "updated_at"
