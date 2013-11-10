@@ -1,13 +1,23 @@
 <pre id="editor">
-def foo(items)
-  items.each { |item| puts "Ace Rocks #{item}" }
-end
+  <% require 'open-uri' %>
+  <% url = "https://raw.github.com/AmalHussein/wdi_project_2/master/github_oauth/advanced_server.rb" %>
+  <% url = "https://raw.github.com/bryckbost/social_mentions/master/app/controllers/repositories_controller.rb" %>
+  <% open(url) do |f| %>
+    <% f.each_line do |line| %>
+    <%= line.chomp %>
+    <% end %>
+    <% end %>
+
 </pre>
+
+
     
  <script src="http://d1n0x3qji82z53.cloudfront.net/src-min-noconflict/ace.js" charset="utf-8"></script>
+ <!--script src="src-noconflict/ace.js" charset="utf-8"></script-->
  <script>
    var editor = ace.edit("editor");
    editor.getSession().setUseWorker(false);
    editor.setTheme("ace/theme/monokai");
    editor.getSession().setMode("ace/mode/ruby");
-</script>
+   </script>
+
