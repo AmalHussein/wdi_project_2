@@ -1,5 +1,9 @@
 require 'sinatra/auth/github'
 require 'rest-client'
+require 'pry'
+require 'github_api'
+require 'octokit'
+
 
 module Example
   class MyBasicApp < Sinatra::Base
@@ -14,6 +18,8 @@ module Example
     CLIENT_ID = '8476104fa8cf26b28392'
     CLIENT_SECRET = '8802502e1d7cc5b5418777a2e2e99634a0ac273d'
 
+    # binding.pry
+
     enable :sessions
 
     set :github_options, {
@@ -24,6 +30,7 @@ module Example
     }
 
     register Sinatra::Auth::Github
+
 
     get '/' do
       if !authenticated?
@@ -46,5 +53,13 @@ module Example
         authenticate!
       end
     end
+
+
+    get '/:scopes' do 
+      erb :index 
+    end
+
+
+
   end
 end
