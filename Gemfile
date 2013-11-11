@@ -6,6 +6,9 @@ gem 'rails', '4.0.0'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
+# Use gems to search the gem listings in RubyGems.org
+gem 'gems'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -17,6 +20,9 @@ gem 'coffee-rails', '~> 4.0.0'
 
 #oauth and api calls for github
 gem 'rest-client'
+
+#github Api gem 
+gem "github_api"
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -50,6 +56,7 @@ gem 'temboo', '~> 1.77'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
+
 
 
 
