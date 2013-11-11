@@ -1,11 +1,17 @@
 AceEditorEmbedTest::Application.routes.draw do
 
   get "editor/index"
-  get "github/initializeoauth"
-  get "github/finalizeoauth"
 
-  # get "github#initializeoauth", as: "initializeoauth"
-  # get "github#finalizeoauth", as: "finalizeoauth"
+  get '/callback' => 'users#callback'
+  get '/sessions/:id/create' => 'sessions#create', as: 'create_user_session'
+  get '/sessions/:id/destroy' => 'sessions#destroy', as: 'destroy_user_session'
+  get '/users/create' => 'users#create', as: 'create_user'
+  get '/users/:id' => 'users#show', as: 'user'
+  get '/select/:login' => 'welcome#select', as: 'select'
+  get '/about' => 'welcome#about', as: 'about'
+
+
+  root to: 'welcome#index'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
