@@ -11,28 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131111202217) do
+ActiveRecord::Schema.define(version: 20131111204645) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "gemms", force: true do |t|
-    t.string   "name"
-    t.string   "documentation_url"
-    t.string   "frequency"
-    t.string   "category"
-    t.text     "description"
-    t.string   "color"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "downloads"
-    t.string   "version"
-    t.string   "authors"
-    t.string   "project_url"
-    t.text     "dependencies"
-  end
-
-  create_table "references", force: true do |t|
     t.string   "name"
     t.string   "documentation_url"
     t.string   "frequency"
