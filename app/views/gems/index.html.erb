@@ -1,9 +1,10 @@
 <h1>Gems</h1>
 <% @gems.each do |my_gem| %>
-<div><h1><%= my_gem['name'] %></h1></div>
 
+<% my_gem = (Gems.search my_gem).first %>
+<div><h1><%= my_gem['name'] %></h1></div>
 <div>Description: <%= my_gem['info'] %></div>
 <div>Project Site: <%= my_gem['project_uri'] %></div>
 <div>Docs: <%= my_gem['documentation_uri'] %></div>
-<div><%= my_gem['authors'] %></div>
+<div>By: <%= my_gem['authors'] %></div>
 <% end %>
