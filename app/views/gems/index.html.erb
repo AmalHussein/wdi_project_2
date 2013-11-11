@@ -1,7 +1,9 @@
 <h1>Gems</h1>
-<div><h1><%= @gem['name'] %></h1></div>
+<% @gems.each do |my_gem| %>
+<div><h1><%= my_gem['name'] %></h1></div>
 
-<div>Description: <%= @gem['info'] %></div>
-<div>Project Site: <%= @gem['project_uri'] %></div>
-<div>Docs: <%= @gem['documentation_uri'] %></div>
-<div><%= @gem['authors'] %></div>
+<div>Description: <%= my_gem['info'] %></div>
+<div>Project Site: <%= my_gem['project_uri'] %></div>
+<div>Docs: <%= my_gem['documentation_uri'] %></div>
+<div><%= my_gem['authors'] %></div>
+<% end %>
