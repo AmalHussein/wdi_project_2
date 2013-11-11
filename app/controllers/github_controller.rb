@@ -20,7 +20,7 @@ class GithubController < ApplicationController
 
 	def FinalizeOAuth
 		@session = TembooSession.new("amalhussein", "myFirstApp", "e50c2e0d-5067-45fa-a")
-		
+
 		# Instantiate the Choreo, using a previously instantiated TembooSession object, eg:
 		# session = TembooSession.new("amalhussein", "APP_KEY_NAME", "APP_KEY_VALUE")
 		@finalizeOAuthChoreo = GitHub::OAuth::FinalizeOAuth.new(session)
@@ -37,6 +37,7 @@ class GithubController < ApplicationController
 		@finalizeOAuthResults = @finalizeOAuthChoreo.execute(@finalizeOAuthInputs)
 
 	end
+end
 
 # 	def initialize()
 # 		@session = TembooSession.new("amalhussein", "myFirstApp", "e50c2e0d-5067-45fa-a")
