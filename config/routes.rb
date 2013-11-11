@@ -1,6 +1,6 @@
 AceEditorEmbedTest::Application.routes.draw do
-
   get "editor/index"
+  resources :gems
   #test change 
   
   # The priority is based upon order of creation: first created -> highest priority.
