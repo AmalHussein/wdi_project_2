@@ -1,9 +1,7 @@
 AceEditorEmbedTest::Application.routes.draw do
   get "editor/index"
-<<<<<<< HEAD
+
   resources :gemms
-  #test change 
-=======
 
   get '/callback' => 'users#callback'
   get '/sessions/:id/create' => 'sessions#create', as: 'create_user_session'
@@ -15,7 +13,7 @@ AceEditorEmbedTest::Application.routes.draw do
   get '/repos' => 'users#repos' 
 
   root to: 'welcome#index'
->>>>>>> master
+
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
