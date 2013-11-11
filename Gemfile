@@ -18,6 +18,9 @@ gem 'coffee-rails', '~> 4.0.0'
 #oauth and api calls for github
 gem 'rest-client'
 
+#github Api gem 
+gem "github_api"
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -50,6 +53,7 @@ gem 'temboo', '~> 1.77'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
+
 
 
 
