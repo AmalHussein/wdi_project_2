@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20131111204645) do
+=======
+ActiveRecord::Schema.define(version: 20131111031601) do
+>>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +34,23 @@ ActiveRecord::Schema.define(version: 20131111204645) do
     t.string   "authors"
     t.string   "project_url"
     t.text     "dependencies"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.string   "url"
+    t.string   "html_url"
+    t.string   "repos_url"
+    t.string   "gists_url"
+    t.string   "avatar_url"
+    t.integer  "public_repos"
+    t.integer  "followers"
+    t.integer  "following"
+    t.integer  "github_id"
+    t.string   "email"
+    t.string   "login"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
