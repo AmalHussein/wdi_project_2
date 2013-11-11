@@ -6,7 +6,7 @@ class GemsController < ApplicationController
     @gems.each do |my_gem|
       @gem = (Gems.search my_gem).first
     end
-
+    
     ##@gem = (Gems.search 'rails').first
   end 
 
