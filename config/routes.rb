@@ -1,7 +1,11 @@
 AceEditorEmbedTest::Application.routes.draw do
 
   get "editor/index"
-  #test change 
+  get "github/initializeoauth"
+  get "github/finalizeoauth"
+
+  # get "github#initializeoauth", as: "initializeoauth"
+  # get "github#finalizeoauth", as: "finalizeoauth"
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
