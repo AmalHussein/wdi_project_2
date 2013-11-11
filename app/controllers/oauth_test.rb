@@ -2,12 +2,11 @@ require 'temboo'
 require 'Library/Github'
 require 'openssl'
 
-	def initialize()
-		@session = TembooSession.new("amalhussein", "myFirstApp", "e50c2e0d-5067-45fa-a")
+def initialize()
+	@session = TembooSession.new("amalhussein", "myFirstApp", "e50c2e0d-5067-45fa-a")
+end
 
-	end
-
-	def initial_oauth 
+def initial_oauth 
 	@initializeOAuthChoreo = GitHub::OAuth::InitializeOAuth.new(@session)
 
 	# Get an InputSet object for the choreo
