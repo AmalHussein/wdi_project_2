@@ -4,18 +4,20 @@ class GithubController < ApplicationController
 	require 'Library/Github'
 
 	def InitializeOAuth
-		@session = TembooSession.new("amalhussein", "myFirstApp", "e50c2e0d-5067-45fa-a")
+		session = TembooSession.new("amalhussein", "myFirstApp", "e50c2e0d-5067-45fa-a")
 
-		@initializeOAuthChoreo = GitHub::OAuth::InitializeOAuth.new(@session)
+		initializeOAuthChoreo = GitHub::OAuth::InitializeOAuth.new(session)
 
 		# Get an InputSet object for the choreo
-		@initializeOAuthInputs = @initializeOAuthChoreo.new_input_set()
+		initializeOAuthInputs = initializeOAuthChoreo.new_input_set()
 
 		# Set inputs
-		@initializeOAuthInputs.set_ClientID("8476104fa8cf26b28392");
+		initializeOAuthInputs.set_ClientID("8476104fa8cf26b28392");
 
 		# Execute Choreo
-		@initializeOAuthResults = @initializeOAuthChoreo.execute(@initializeOAuthInputs)
+		initializeOAuthResults = initializeOAuthChoreo.execute(initializeOAuthInputs)
+		@result = initializeOAuthResults.get_Response()
+		binding.pry
 	end
 
 	def FinalizeOAuth
