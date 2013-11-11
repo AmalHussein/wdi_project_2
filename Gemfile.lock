@@ -44,6 +44,7 @@ GEM
     execjs (2.0.2)
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
+    gems (0.8.3)
     hike (1.2.3)
     i18n (0.6.5)
     jbuilder (1.5.2)
@@ -131,6 +132,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
   dotenv-rails
+  gems
   jbuilder (~> 1.2)
   jquery-rails
   octokit (~> 2.0)
