@@ -12,14 +12,13 @@
   <%end%> 
 <%end%> 
 
-
-
-
-
-
-
-
-
->>>>>>> 3ae30bd8276157d870e57d884992c052417358fb
+<div class="accordion">
+	<%@grouped.each do |dir, filenames|%>
+	<a href="<%= dir %>" class="accordion-toggle"><%= dir %></a>
+		<p><%filenames.each do|file| %></p>
+		<a class="accordion-content"href="<%= "https://raw.github.com/AmalHussein/wdi_project_2/master/" + dir + "/" + file%>"><%= file%></a>
+		<%end%> 
+	<%end%> 
+</div>
 
 

@@ -35,8 +35,7 @@ class UsersController < ApplicationController
     # @user = @user.to_json.html_safe
   end
 
-  def repos
-  	
+  def repos	
   	github = Github.new client_id: ENV['CLIENT_ID'] , client_secret: ENV['CLIENT_SECRET']
   	tree = github.git_data.trees.get 'AmalHussein' , 'wdi_project_2', 'master' , recursive: true
   	paths = tree['tree'].map(&:path)
@@ -46,10 +45,7 @@ class UsersController < ApplicationController
   		paths.map! { |path| File.basename(path) }	
   	end
   @grouped.delete_if { |dir, paths| paths.empty? }
-  #binding.pry
+ 
   end 
-
-
-
 
 end

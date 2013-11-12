@@ -6,6 +6,9 @@
 # #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 # #   Mayor.create(name: 'Emanuel', city: cities.firstgemrence.create(gem_name: 'Py', resource_ur: 'http://rdoc.info/github/pry/pry/master/Pry')
 
+
+
+
 # Reference.create(gem_name: 'better_errors', url: 'https://github.com/plataformatec/devise', category: 'logins', frequency: 'normal')
 # Reference.create(gem_name: 'binding_of_caller', url: 'http://rdoc.info/github/pry/pry/master/Pry', category: 'API', )
 # Reference.create(gem_name: 'annotate', :url 'http://www.rubyflow.com/items/7746-screencast-oauth-2-with-doorkeeper', category: 'logins')

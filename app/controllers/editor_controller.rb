@@ -2,9 +2,5 @@ class EditorController < ApplicationController
 
 
   def index
-    Octokit.configure do |c|
-      c.login = ENV['LOGIN']
-      c.password = ENV['PASSWORD']
-    end
-  end
+ github = Github.new client_id: ENV['CLIENT_ID'] , client_secret: ENV['CLIENT_SECRET']
 end
