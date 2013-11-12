@@ -1,4 +1,4 @@
-function accordion(){
+  function accordion(){
   var toggle = $(".accordion-toggle");
   var content = $(".accordion-content");
   content.hide();
@@ -11,6 +11,9 @@ function accordion(){
   });
 }
 
-accordion();
+$(function() {
+  accordion();
+});
+  
 
 
