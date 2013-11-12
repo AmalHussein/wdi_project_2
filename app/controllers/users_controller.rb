@@ -26,9 +26,9 @@ class UsersController < ApplicationController
           # decide whether or not to add repos at this time
         end
 
-  def show
-  	@user = User.where(params[:id])
-  	@repo = Octokit.repo("AmalHussein/wdi_project_2")
+        def show
+        	@user = User.where(params[:id])
+        	@repo = Octokit.repo("AmalHussein/wdi_project_2")
     # @repos = @user.repos
     # @repos.sort! {|a,b| a.main_language <=> b.main_language}
     # @repos = @user.repos.to_json.html_safe
@@ -36,12 +36,19 @@ class UsersController < ApplicationController
   end
 
   def repos
-  	#binding.pry
-		github = Github.new client_id: ENV['CLIENT_ID'] , client_secret: ENV['CLIENT_SECRET']
-		tree = github.git_data.trees.get 'AmalHussein' , 'wdi_project_2', 'master' , recursive: true
-		@links = tree['tree'].map(&:path)
-	end 
-	
+  	
+  	github = Github.new client_id: ENV['CLIENT_ID'] , client_secret: ENV['CLIENT_SECRET']
+  	tree = github.git_data.trees.get 'AmalHussein' , 'wdi_project_2', 'master' , recursive: true
+  	paths = tree['tree'].map(&:path)
+  	@grouped = paths.group_by { |p| File.dirname(p) }
+  	@grouped.each do |dir, paths|
+  		paths.delete_if { |path| @grouped.has_key? path }
+  		paths.map! { |path| File.basename(path) }	
+  	end
+  @grouped.delete_if { |dir, paths| paths.empty? }
+  #binding.pry
+  end 
+
 
 
 

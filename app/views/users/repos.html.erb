@@ -5,4 +5,21 @@
   <%end%> 
 </ul>
 
+<%@grouped.each do |dir, filenames|%>
+  <h2><%= dir %></h2>
+  <%filenames.each do|file| %>
+	  <a href='<%= "https://raw.github.com/AmalHussein/wdi_project_2/master/#{dir}/#{file}"%>'><p style='color:blue'><%= file %></p></a>	
+  <%end%> 
+<%end%> 
+
+
+
+
+
+
+
+
+
+>>>>>>> 3ae30bd8276157d870e57d884992c052417358fb
+
 
