@@ -1,4 +1,17 @@
 <h1>Repo Links</h1>
+<ul> 
+  <% @links.each do |link| %>
+    <li><%= link %></li>
+  <%end%> 
+</ul>
+
+<%@grouped.each do |dir, filenames|%>
+  <h2><%= dir %></h2>
+  <%filenames.each do|file| %>
+	  <a href='<%= "https://raw.github.com/AmalHussein/wdi_project_2/master/#{dir}/#{file}"%>'><p style='color:blue'><%= file %></p></a>	
+  <%end%> 
+<%end%> 
+
 <div class="accordion">
 	<%@grouped.each do |dir, filenames|%>
 	<a href="<%= dir %>" class="accordion-toggle"><%= dir %></a>
@@ -7,12 +20,5 @@
 		<%end%> 
 	<%end%> 
 </div>
-
-
-
-
-
-
-
 
 

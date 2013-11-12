@@ -41,4 +41,8 @@ Jeff Atwood explains why reading code is such a vital skill for good programmers
 
 < Nobody reads other people's code for fun. Hell, I don't even like reading my own code.
 
-< We must read other people's code because we have to understand it to get things done.
+< We must read other people's code because we have to understand it to get things done
+
+[Patterns in a Rails Gemfile](http://brandonhilkert.com/blog/patterns-in-a-rails-gemfile/)
+
+[Rails Rumble Gem Teardown](http://www.dwellable.com/blog/Rails-Rumble-Gem-Teardown)

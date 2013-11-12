@@ -1,6 +1,2 @@
-class Reference < ActiveRecord::Base
-
-	
-
-	
+class Reference < ActiveRecord::Base	
 end 
