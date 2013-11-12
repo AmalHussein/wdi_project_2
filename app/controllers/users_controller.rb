@@ -45,7 +45,7 @@ class UsersController < ApplicationController
   		paths.map! { |path| File.basename(path) }	
   	end
   @grouped.delete_if { |dir, paths| paths.empty? }
-  binding.pry
+ 
   end 
 
 end
