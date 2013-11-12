@@ -1,8 +1,11 @@
 <h1>Repo Links</h1>
 
 <p><%@grouped.each do |dir, filenames|%></p>
-<p><%= dir %></p>
-<p><%=filenames %></p>
+<h2><%= dir %></h2>
+<p><%filenames.each do|file| %></p>
+	<a href="<%= "https://raw.github.com/AmalHussein/wdi_project_2/master/" + dir + "/" + file%>"><p style='color:blue' ><%= file%></p></a>
+				
+<%end%> 
 <%end%> 
 
 
