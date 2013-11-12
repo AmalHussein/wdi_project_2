@@ -14,7 +14,7 @@ class GemmsController < ApplicationController
   end
 
   def create
-    @gem = Gemm.new #(gem_params)
+    @gem = Gemm.new(gem_params)
     if @gem.save 
       redirect_to @gem
     else 
@@ -26,9 +26,9 @@ class GemmsController < ApplicationController
     @gem.destroy
   end
 
-  #private
+  private
 
-  # def gem_params
-  #   params.require(:name).permit(:documentation_url, :description, :downloads, :authors, :dependencies, :language, :cosa)
-  # end 
+  def gem_params
+    params.require(:name).permit(:documentation_url, :description, :downloads, :authors, :project_url, :dependencies, :language, :cosa)
+  end 
 end
