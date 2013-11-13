@@ -23,7 +23,6 @@ namespace :gemlist do
                     gem_uri: gem_digest["gem_uri"],
                     homepage_uri: gem_digest["homepage_uri"],
                     wiki_uri: gem_digest["wiki_uri"], 
-                    documentation_uri: gem_digest["documentation_uri"],
                     mailing_list_uri: gem_digest["mailing_list_uri"],
                     source_code_uri: gem_digest["source_code_uri"],
                     bug_tracker_uri: gem_digest["bug_tracker_uri"], 
