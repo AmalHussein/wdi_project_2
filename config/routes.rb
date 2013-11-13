@@ -1,7 +1,7 @@
 AceEditorEmbedTest::Application.routes.draw do
  root 'welcome#index'
  get '/repo/:github_user/:github_repo' => 'repos#show'
- get '/gem/:gemm_name' => 'gemm#show'
+ get '/gem/:gemm_name' => 'gemms#show'
 
  post '/resource/create'=> 'resource#create'
 
