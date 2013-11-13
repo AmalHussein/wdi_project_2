@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131113002210) do
+ActiveRecord::Schema.define(version: 20131113004727) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,16 @@ ActiveRecord::Schema.define(version: 20131113002210) do
   create_table "repos_tables", force: true do |t|
   end
 
+  create_table "resources", force: true do |t|
+    t.string   "site_name"
+    t.string   "site_url"
+    t.text     "site_description"
+    t.integer  "user_id"
+    t.integer  "gemm_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "url"
@@ -68,6 +78,13 @@ ActiveRecord::Schema.define(version: 20131113002210) do
     t.string   "login"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "votes", force: true do |t|
+    t.integer "up_votes"
+    t.integer "down_votes"
+    t.integer "user_id"
+    t.integer "resource_id"
   end
 
 end

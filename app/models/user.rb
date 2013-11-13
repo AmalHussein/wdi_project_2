@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+		#has_many :votes
+		has_many :resources 
+
 	require 'octokit'
 	require 'rest-client'
 	require 'github_api'

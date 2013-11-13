@@ -1,5 +1,6 @@
 class Gemm < ActiveRecord::Base
 	has_many :repos
+	has_many :resources 
 
 
   #before_create :fetch_gem_info
