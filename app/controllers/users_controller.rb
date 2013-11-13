@@ -12,7 +12,6 @@ class UsersController < ApplicationController
 		redirect_to '/users/create'
 	end
 
-
 	def create
 		user = JSON.parse(RestClient.get("https://api.github.com/user", {params: {:access_token => @@access_token}}))
 		user_info = {name: user['name'],
