@@ -8,4 +8,5 @@ class Gemm < ActiveRecord::Base
   # def fetch_gem_info
   #   # If the gem isn't in the database, fetch info from Github
   # end
+
 end

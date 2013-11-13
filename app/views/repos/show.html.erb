@@ -1,2 +1,7 @@
 <%= @repo.repo_name %>
-<%= @repo %>
+
+<div class="gems">
+<% @repo.gemms.each do |gemm| %>
+	<div class="gem"><%= gemm.name %></div>
+<% end %>
+</div>
