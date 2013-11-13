@@ -10,6 +10,7 @@ namespace :gemlist do
     end
 
     gemlist.each do |jem|
+      binding.pry
       begin
         gem_digest = Gems.search(jem).first
         puts "Importing: #{gem_digest["name"]}"
