@@ -1,3 +1,3 @@
 class Repo < ActiveRecord::Base
-	has_many :gemms
+	has_and_belongs_to_many :gemms
 end
