@@ -2,7 +2,6 @@ class ReposController < ApplicationController
   respond_to :html, :json
 
   def show 
-    binding.pry
     @repo = Repo.find_or_create_by(repo_username: params[:github_user], repo_name: params[:github_repo])
     respond_with @repo 
   end 

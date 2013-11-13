@@ -6,7 +6,8 @@ class ResourcesController < ApplicationController
 	def update 
 	end 
 
-	def create 
+	def create
+    
 	end 
 
 	#add in method for up and downs of resources
