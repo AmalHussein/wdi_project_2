@@ -46,3 +46,7 @@ Jeff Atwood explains why reading code is such a vital skill for good programmers
 [Patterns in a Rails Gemfile](http://brandonhilkert.com/blog/patterns-in-a-rails-gemfile/)
 
 [Rails Rumble Gem Teardown](http://www.dwellable.com/blog/Rails-Rumble-Gem-Teardown)
+
+[Exploresion](http://exploresion.org/)
+
+A simpler way to search that might provide some inspiration for our layout.
