@@ -2,7 +2,8 @@ class GemmsController < ApplicationController
   respond_to :html, :json
 
   def show
-    @gemm = Gemm.where(name: params[:name])
+    firsty = Gemm.where(name: params[:name])
+    @gemm = firsty.first
     respond_with @gemm
   end
 #   def index
