@@ -7,7 +7,7 @@ class ReposController < ApplicationController
   end 
 
 
-  
+
 
   #not using just reference, 
   # def repos	
