@@ -18,9 +18,9 @@
         <a href="#"> Sign up</a>
       </nav>
     </div>
-    <form>
+    <form id="search-field">
       <input type="search"></input>
-       <input type="submit" value="search"></input>
+      <input type="submit" value="search"></input>
     </form>
     <div class="repo-name"> Tibbon/AwesomeBits</div>
 
@@ -36,13 +36,22 @@
       <div class="gem" id="gem-name" >Pry</div>
       <!-- each link -->
       <div class="gem-resource">
-          <div class="gem-voting">
+        <div class="gem-voting">
           <span id="up_votes">+</span>
           <span id="total_votes">5</span>
           <span id="down_votes">-</span>
-          </div>
-          <div><a href="#"  class='resource-link'>http://resource_link.org/</a>
-          </div>
+        </div>
+        <div><a href="#"  class="resource-link">http://resource_link.org/</a>
+        </div>
+      </div>
+      <div class="gem-resource">
+        <div class="gem-voting">
+          <span id="up_votes">+</span>
+          <span id="total_votes">5</span>
+          <span id="down_votes">-</span>
+        </div>
+        <div><a href="#"  class="resource-link">http://resource_link.org/</a>
+        </div>
       </div>
     </div>
 
