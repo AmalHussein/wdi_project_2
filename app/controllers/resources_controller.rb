@@ -1,13 +1,10 @@
 class ResourcesController < ApplicationController
-
-	def edit
-	end 
-
-	def update 
-	end 
+  respond_to :html, :json
 
 	def create
     
+    @resource = Resource.new(site_name: params[:name], site_url: params[:url], site_description: params[:description])
+    respond_with @resource
 	end 
 
 	#add in method for up and downs of resources
