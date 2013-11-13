@@ -1,4 +1,5 @@
 class Repo < ActiveRecord::Base
+  include HTTParty
 	# http://edgeguides.rubyonrails.org/active_record_callbacks.html
 	before_validation :parse_and_store_gemms
 
@@ -14,11 +15,27 @@ class Repo < ActiveRecord::Base
 	private # can only be called from within the model
 
 	def parse_and_store_gemms
+    # Ask Github for the name of the repo
+
 		# Using Github, get the Gemfile from the repo
 		# Regex/parse the gemfile's data to get an array of gems
-		# gemm_list = array_parsed_from_github_gemfile
-		# gemm_list.each do |gemm|
-		# 	self.gemms << Gemm.find_or_create_by(name: gemm)
-		# end
+    gemm_list = mine_gems
+		gemm_list.each do |gemm|
+			self.gemms << Gemm.find_or_create_by(name: gemm)
+		end
 	end
+
+  def mine_gems
+    url = "http://raw.github.com/#{repo_username}/#{repo_name}/master/Gemfile"
+    response = HTTParty.get(url)
+    gemms = []
+    begin
+      response.each_line do |line|
+        gemms << $1 if line =~ ( /gem\s\'(.*?)\'/ || /gem\s\"(.*?)\"/ )
+      end
+    rescue => err
+      puts "Exception: #{err}"
+    end
+    return gemms
+  end
 end

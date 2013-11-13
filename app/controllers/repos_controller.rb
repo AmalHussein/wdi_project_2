@@ -2,7 +2,7 @@ class ReposController < ApplicationController
   respond_to :html, :json
 
   def show 
-    @repo = Repo.where('repo_username ilike ? AND repo_name ilike ?', params[:github_user], params[:github_repo]).first
+    @repo = Repo.find_or_create_by(repo_username: params[:github_user], repo_name: params[:github_repo])
     respond_with @repo 
   end 
 

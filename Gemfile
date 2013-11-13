@@ -6,6 +6,9 @@ gem 'rails', '4.0.0'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
+# For making easy HTTP requests
+gem 'httparty'
+
 # Use gems to search the gem listings in RubyGems.org
 gem 'gems'
 
