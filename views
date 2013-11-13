@@ -10,10 +10,10 @@
 </head>
 <body>
   <div id="container">
-    <div id="header">
+    <div class="wrap">
       <h1>Git<span id='see'>See</span></h1>
 
-      <nav >
+      <nav>
         <a href="#">Login </a>
         <a href="#"> Sign up</a>
       </nav>
