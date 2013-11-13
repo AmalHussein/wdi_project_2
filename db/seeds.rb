@@ -11,15 +11,15 @@ res_2 = Resource.create(site_name: "Rails Guides", site_url: "http://guides.ruby
 res_3 = Resource.create(site_name: "Synaptian", site_url: "http://www.synaptian.com/blog/posts/using-the-twitter-gem-in-your-rails-application")
 res_4 = Resource.create(site_name: "Lucapette", site_url: "http://lucapette.com/pry/pry-everywhere/")
 
-repo_1.gems << gem_1
-repo_1.gems << gem_2
-repo_1.gems << gem_3
-repo_1.gems << gem_4
+repo_1.gemms << gem_1
+repo_1.gemms << gem_2
+repo_1.gemms << gem_3
+repo_1.gemms << gem_4
 
-repo_2.gems << gem_1
-repo_2.gems << gem_2
-repo_2.gems << gem_3
-repo_2.gems << gem_4
+repo_2.gemms << gem_1
+repo_2.gemms << gem_2
+repo_2.gemms << gem_3
+repo_2.gemms << gem_4
 
 gem_1.resources << res_1
 gem_1.resources << res_2
