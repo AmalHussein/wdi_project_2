@@ -1,14 +1,22 @@
 class ResourcesController < ApplicationController
-  respond_to :html, :json
 
 	def create
-    
-    @resource = Resource.new(site_name: params[:name], site_url: params[:url], site_description: params[:description])
-    respond_with @resource
+    @resource = Resource.new(resource_params)
+    if @resource.save
+      render json: @resource
+    else
+      # failure -- what to do here?
+    end
 	end 
 
 	#add in method for up and downs of resources
 	def vote
-	end 
+	end
+
+  private
+
+  def resource_params
+    params.require(:site_url).permit(:site_name, :site_description)
+  end
 
 end
