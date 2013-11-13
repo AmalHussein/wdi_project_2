@@ -9,6 +9,8 @@ class ResourcesController < ApplicationController
     end
 	end 
 
+
+
 	#add in method for up and downs of resources
 	def vote
 	end
