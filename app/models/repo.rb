@@ -13,7 +13,7 @@ class Repo < ActiveRecord::Base
 
 	private # can only be called from within the model
 
-	def parse_and_store_gems
+	def parse_and_store_gemms
 		# Using Github, get the Gemfile from the repo
 		# Regex/parse the gemfile's data to get an array of gems
 		# gemm_list = array_parsed_from_github_gemfile
