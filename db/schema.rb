@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131113001012) do
+ActiveRecord::Schema.define(version: 20131113002210) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,15 @@ ActiveRecord::Schema.define(version: 20131113001012) do
     t.string   "language"
     t.string   "cosa"
   end
+
+  create_table "gemms_repos", id: false, force: true do |t|
+    t.integer "gemm_id"
+    t.integer "repo_id"
+  end
+
+  add_index "gemms_repos", ["gemm_id", "repo_id"], name: "index_gemms_repos_on_gemm_id_and_repo_id", using: :btree
+  add_index "gemms_repos", ["gemm_id"], name: "index_gemms_repos_on_gemm_id", using: :btree
+  add_index "gemms_repos", ["repo_id"], name: "index_gemms_repos_on_repo_id", using: :btree
 
   create_table "repos", force: true do |t|
     t.string   "repo_name"
