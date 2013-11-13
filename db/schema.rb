@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131113005747) do
+ActiveRecord::Schema.define(version: 20131113183530) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,14 @@ ActiveRecord::Schema.define(version: 20131113005747) do
     t.text     "dependencies"
     t.string   "language"
     t.string   "cosa"
+    t.string   "real_name"
+    t.string   "version_downloads"
+    t.text     "gem_uri"
+    t.text     "homepage_uri"
+    t.text     "wiki_uri"
+    t.text     "mailing_list_uri"
+    t.text     "source_code_uri"
+    t.text     "bug_tracker_uri"
   end
 
   create_table "gemms_repos", id: false, force: true do |t|
