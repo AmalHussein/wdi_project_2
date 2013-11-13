@@ -1,0 +1,91 @@
+
+
+body {
+  font-family: 'Asap', sans-serif;
+  text-align:center;
+}
+
+a {
+  color:#7FBBE6;
+  font-family: 'Asap', sans-serif;
+  font-weight: 100;
+  text-decoration: none;
+
+}
+
+li {
+  list-style: none;
+
+}
+
+#header {
+ 
+}
+
+
+h1 {
+  margin: 0px;
+  padding: 5px;
+  text-align: left;
+  font-size: 3em;
+}
+
+#container {
+  width: 1000px;
+  height: 1000px;
+  margin: auto;
+  background-color: #aaa;
+
+}
+.gems {
+  height: 120px;
+  background-color: blue;
+
+}
+#gem-name {
+  height: 100px;
+  width: 100px;
+  padding: 10px;
+  text-align:center;
+  font-size: 30px;
+  background-color: yellow;
+  float: left;
+}
+.gem-resource {
+  height:30px;
+  float:left;
+}
+  .gem-voting {
+    width:50px;
+    padding:5px;
+    background-color: #7FBBE6;
+  }
+  .resource-link {
+    float: left;
+  }
+
+.repo-name {
+  background-color: #eee;
+  text-align:center;
+  font-size: 30px;
+}
+
+.accordion-toggle {
+  display: block;
+
+}
+
+#see {
+  font-weight:100;
+  color:#7FBBE6;
+}
+
+
+
+  .repo-info {
+    background-color: #ddd;
+    margin:0px;
+  }
+
+
+

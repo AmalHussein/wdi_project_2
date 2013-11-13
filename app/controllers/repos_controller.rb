@@ -4,6 +4,7 @@ class ReposController < ApplicationController
   def show 
     @repo = Repo.find_or_create_by(repo_username: params[:github_user], repo_name: params[:github_repo])
     respond_with @repo 
+    binding.pry
   end 
 
   #not using just reference, 
