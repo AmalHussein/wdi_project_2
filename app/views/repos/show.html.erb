@@ -2,7 +2,7 @@
   <form id="search-box">
     GitHub User:<input type="text" id="github_user" />
     Github Repo:<input type="text" id="github_repo" />
-    <button id="repo-search-submit" >FIND GEMS</button>
+    <button id="search-button" >FIND GEMS</button>
   </form>
 </div>
 
@@ -11,15 +11,7 @@
 <div class="gems">
   <% @repo.gemms.each do |gemm| %>
   <div class="gem">
-    <div class="gem-name"><h4>Name:<%= gemm.name %></h4></div>
-    <div class="gem-docs">Docs: <%= gemm.documentation_url %></div>
-    <div class="project-uri">Project URI: <%= gemm.project_url %></div>
-    <div class="gem-resources">
-      <h5>Resources</h5>
-      <% gemm.resources.each do |resource| %>
-      <div class="gem-resource"><%= link_to resource.site_name, resource.site_url %> </div>
-      <% end %>
-    </div>
+
     <% end %>
   </div>
 
