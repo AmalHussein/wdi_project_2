@@ -1,20 +1,23 @@
 AceEditorEmbedTest::Application.routes.draw do
-  get "editor/index"
+ root 'welcome#index'
+ get '/repo/:github_user/:github_repo' => 'repos#show'
+ get '/gem/:gemm_name' => 'gemm#show'
 
-  resources :gemms
+ post '/resource/create'=> 'resource#create'
 
-  get '/callback' => 'users#callback'
-  get '/sessions/:id/create' => 'sessions#create', as: 'create_user_session'
-  get '/sessions/:id/destroy' => 'sessions#destroy', as: 'destroy_user_session'
-  get '/users/create' => 'users#create', as: 'create_user'
-  get '/users/:id' => 'users#show', as: 'user'
-  get '/select/:login' => 'welcome#select', as: 'select'
-  get '/about' => 'welcome#about', as: 'about'
-  get '/repos' => 'users#repos' 
+ post '/resource/:id:/vote' => 'resource#vote'
 
-  root to: 'welcome#index'
 
-  
+ get '/callback' => 'users#callback'
+ get '/sessions/:id/create' => 'sessions#create', as: 'create_user_session'
+ get '/sessions/:id/destroy' => 'sessions#destroy', as: 'destroy_user_session'
+ get '/users/create' => 'users#create', as: 'create_user'
+ get '/users/:id' => 'users#show', as: 'user'
+ get '/select/:login' => 'welcome#select', as: 'select'
+ 
+ 
+
+ 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
