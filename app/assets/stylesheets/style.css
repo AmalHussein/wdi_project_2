@@ -6,3 +6,11 @@ a {
 	color:blue;
 }
 
+
+h5 {
+  background-color: yellow;
+  margin: auto;
+}
+[*=gem-] {
+  background-color:green;
+}
