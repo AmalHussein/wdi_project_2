@@ -14,7 +14,7 @@ GitSee.ajax_resource = function(resource_name, resource_link, resource_desc, git
   // currently hardcoded to 'repo/rubygems/gems'
   var url = "/repo/" + github_user + "/" + github_repo; 
   $.ajax({
-    url: url,
+    url: '/',
     dataType: 'json',
     data: { site_name: resource_name, 
             site_url: resource_link,
@@ -32,7 +32,7 @@ GitSee.add_new_resource = function() {
       resource_desc = $('#resource-form-desc').val(),
       github_user = 'rubygems', // currently
       github_repo = 'gems';     // hardcoded
-
+  debugger;
   $('#resource-form-name').val('');
   $('#resource-form-url').val('');
   $('#resource-form-desc').val('');
@@ -42,8 +42,7 @@ GitSee.add_new_resource = function() {
 
 
 $(function() {
-  $('#resource-create-form').click(function(e){
-    debugger;
+  $('#resource-create-form').click(function(e) {
     e.preventDefault();
     GitSee.add_new_resource();
   });
