@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%= @repo.repo_name %>
 <div id="canvas"></div>
 <div class="gems">
@@ -15,3 +16,22 @@
       <% end %>
    
   </div>
+=======
+<div>
+  <%= form_tag '/repo', remote: true, method: 'get' do %>
+    <%= label_tag "github user" %>
+    <%= text_field_tag :github_user %>
+    <%= label_tag "github repo" %>
+    <%= text_field_tag :github_repo %>
+    <%= submit_tag "Search" %>
+  <% end %> 
+
+</div>
+
+<h1 id="repo-title"><%= @repo.repo_name %></h1>
+
+<div class="gems">
+  <h5>Gems</h5>
+  <%= render partial: "gemms/gemm", collection: @repo.gemms %>
+</div>
+>>>>>>> f5ed726948e000dff751c6887a42e8fb3ad0d502

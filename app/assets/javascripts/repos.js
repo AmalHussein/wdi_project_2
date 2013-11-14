@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 $(document).ready(function(){
 
   $('.gem-docs').hide();
@@ -25,3 +26,6 @@ $(document).ready(function(){
 // );
 
 });
+=======
+var GitSee = {}; 
+>>>>>>> f5ed726948e000dff751c6887a42e8fb3ad0d502
