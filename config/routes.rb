@@ -2,7 +2,7 @@ AceEditorEmbedTest::Application.routes.draw do
  root 'repos#show'
  get '/repo/:github_user/:github_repo' => 'repos#show'
  get '/gem/:name' => 'gemms#show'
- post '/resource/create'=> 'resources#create'
+ post '/resource/create'=> 'resources#create', as: "gemm_resources"
  post '/resource/:id:/vote' => 'resources#vote'
 
  #Routes for GitHub Oauth need refine and clean up
