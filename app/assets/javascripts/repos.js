@@ -3,6 +3,7 @@ var GitSee = {};
 GitSee.render_gems = function(gemm_data) {
 
   var gems = gemm_data.gemms;
+  $('.gems').empty();
   $.each(gems, function(index, gem){
     $('.gems').append("<div id=\"gemm-" + gem.id + "\">" + 
     "<h3>" + gem.name + "</h3>" +
