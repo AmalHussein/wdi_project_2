@@ -1,5 +1,13 @@
-<%= @repo.repo_name %>
+<div>
+  <%= form_tag '/repo', remote: true, method: 'get' do %>
+    <%= label_tag "github user" %>
+    <%= text_field_tag :github_user %>
+    <%= label_tag "github repo" %>
+    <%= text_field_tag :github_repo %>
+    <%= submit_tag "Search" %>
+  <% end %> 
 
+<<<<<<< HEAD
 
 <div class="gems">
 <% @repo.gemms.each do |gemm| %>
@@ -14,5 +22,13 @@
       <% end %>
     </div>
 <% end %>
+=======
+>>>>>>> 9c860464b4feaa4d23a4dbefe0bfd083db881835
 </div>
 
+<h1 id="repo-title"><%= @repo.repo_name %></h1>
+
+<div class="gems">
+  <h5>Gems</h5>
+  <%= render partial: "gemms/gemm", collection: @repo.gemms %>
+</div>
