@@ -17,7 +17,14 @@ GitSee.render_gems = function(gemm_data) {
 };
 
 GitSee.jquery_ajax_load = function(github_user, github_repo) { 
-  var url = "/repo/" + github_user + "/" + github_repo; 
+  var url = "/repo/" + github_user + "/" + github_repo,
+      stateObj = { foo: "bar" };
+      // history.pushState(stateObj, title, url);
+      history.pushState(stateObj, 
+                        github_user + ": " + github_repo + " " + "documentation", 
+                        "/repo/" + github_user + "/" + github_repo);
+
+
   $.ajax({
     url: url, 
     dataType: 'json', 
