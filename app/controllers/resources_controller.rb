@@ -2,7 +2,7 @@ class ResourcesController < ApplicationController
 
 	def create
     @resource = Resource.new(resource_params)
-    binding.pry
+    # Still need to associate current user
     if @resource.save
       respond_to do |format|
         format.js
@@ -21,7 +21,7 @@ class ResourcesController < ApplicationController
   private
 
   def resource_params
-    params.require(:site_url).permit(:site_name, :site_description)
+    params.require(:resource).permit(:site_name, :site_url, :gemm_id)
   end
 
 end
