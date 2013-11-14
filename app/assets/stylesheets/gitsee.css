@@ -10,7 +10,7 @@ a {
 }
 
 #background-header {
-  width: 3000px;
+  width: 100%;
   height: 70px;
   background-color: #95A5A6;
   position: absolute;
