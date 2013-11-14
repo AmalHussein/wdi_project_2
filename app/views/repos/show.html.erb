@@ -1,15 +1,17 @@
-<%= @repo.repo_name %>
+<div>
+  <%= form_tag '/repo', remote: true, method: 'get' do %>
+    <%= label_tag "github user" %>
+    <%= text_field_tag :github_user %>
+    <%= label_tag "github repo" %>
+    <%= text_field_tag :github_repo %>
+    <%= submit_tag "Search" %>
+  <% end %> 
+
+</div>
+
+<h1 id="repo-title"><%= @repo.repo_name %></h1>
 
 <div class="gems">
-<% @repo.gemms.each do |gemm| %>
-	<div class="gem">
-    <div class="gem-name"><h4> <%= gemm.name %></h4></div>
-    <div class="gem-docs">Docs: <%= gemm.documentation_url %></div>
-    <div class="gem-resources">
-      <h5>Resources</h5>
-      <% gemm.resources.each do |resource| %>
-        <div class="gem-resource"><%= link_to resource.site_name, resource.site_url %> </div>
-      <% end %>
-    </div>
-<% end %>
+  <h5>Gems</h5>
+  <%= render partial: "gemms/gemm", collection: @repo.gemms %>
 </div>

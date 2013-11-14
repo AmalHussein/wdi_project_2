@@ -26,6 +26,7 @@ class Repo < ActiveRecord::Base
 	end
 
   def mine_gems
+    #binding.pry
     url = "http://raw.github.com/#{repo_username}/#{repo_name}/master/Gemfile"
     response = HTTParty.get(url)
     gemms = []
