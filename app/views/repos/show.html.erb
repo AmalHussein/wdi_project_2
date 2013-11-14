@@ -1,10 +1,10 @@
 <%= @repo.repo_name %>
-
+<div id="canvas"></div>
 <div class="gems">
   <% @repo.gemms.each do |gemm| %>
   <div class="gem">
     <div class="gem-name"><h4><%= gemm.name %></h4></div>
-    <div class="all-gem-resources">
+   
       <div class="gem-docs">Docs: <%= gemm.documentation_url %></div>
       <div class="gem-resources">
         <h5>Resources</h5>
@@ -13,5 +13,5 @@
         <% end %>
       </div>
       <% end %>
-    </div>
+   
   </div>

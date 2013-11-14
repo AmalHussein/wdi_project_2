@@ -5,6 +5,7 @@ $(document).ready(function(){
 
   $('.gem-name h4').click(function(e){
    e.preventDefault();
+   $('.gem-docs').appendTo('#canvas');
    $('.gem-docs').show();
   })
 
