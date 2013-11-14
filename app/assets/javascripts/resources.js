@@ -2,9 +2,9 @@ var GitSee = {};
 
 GitSee.render_resource = function(resource_data) {
   $('resource-container').append(
-    "<div id=\"post-" + resource_data.id + "\">" +
-    "<div>" + resource_data.site_name + "</div>" +
-    "<div>" + resource_data.site_url + "</div>" +
+    "<div id=\"resource-" + resource_data.id + "\">" +
+    "<a href=" + resource_data.site_url + ">" +
+    resource_data.site_name + "</a>" +
     "<div>" + resource_data.site_description + "</div>"
   );
 };
