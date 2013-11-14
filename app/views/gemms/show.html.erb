@@ -1,20 +1,15 @@
 <h1>Gem Page</h1>
 
-<div>Real Name: <%= @gemm.real_name %></div>
-<div>Name: <%= @gemm.name %></div>
-<div>ID: <%= @gemm.id %></div>
-<div>Frequency: <%= @gemm.frequency %></div>
-<div>Category: <%= @gemm.category %></div>
+<a href="<%= @gemm.project_url %>"><%= @gemm.real_name %></a>
+<span>v. <%= @gemm.version %></span><br />
+<a href="<%= @gemm.gem_uri %>">Get it</a>
+<span><%= @gemm.downloads %> downloads and counting...</span>
+
 <div>Description: <%= @gemm.description %></div>
-<div>Version: <%= @gemm.version %></div>
-<div>Downloads: <%= @gemm.downloads %></div>
-<div>Version Downloads: <%= @gemm.version_downloads %></div>
-<div>Platform: <%= @gemm.platform %></div>
-<div>Project URI: <%= @gemm.project_url %></div>
-<div>Documentation URI: <%= @gemm.documentation_url %></div>
-<div>Gem URI: <%= @gemm.gem_uri %></div>
-<div>Homepage URI: <%= @gemm.homepage_uri %></div>
-<div>Wiki URI: <%= @gemm.wiki_uri %></div>
-<div>Mailing List: <%= @gemm.mailing_list_uri %></div>
-<div>Source Code URI: <%= @gemm.source_code_uri %></div>
-<div>Bug Tracker URI: <%= @gemm.bug_tracker_uri %></div>
+
+<div>Documentation:
+
+  <%= @gemm.homepage_uri    || @gemm.documentation_url || 
+      @gemm.wiki_uri        || @gemm.mailing_list_uri  ||
+      @gemm.source_code_uri || @gemm.bug_tracker_uri   %> 
+</div>
