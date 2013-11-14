@@ -7,9 +7,9 @@
 
 <div>Description: <%= @gemm.description %></div>
 
-<div>Documentation:
+  <a href="<%= @gemm.homepage_uri    || @gemm.documentation_url || 
+               @gemm.wiki_uri        || @gemm.mailing_list_uri  ||
+               @gemm.source_code_uri || @gemm.bug_tracker_uri   %>">
+  Documentation</a>
 
-  <%= @gemm.homepage_uri    || @gemm.documentation_url || 
-      @gemm.wiki_uri        || @gemm.mailing_list_uri  ||
-      @gemm.source_code_uri || @gemm.bug_tracker_uri   %> 
-</div>
+<div>Got better docs? <a href='#'>Share</a></div>
