@@ -20,18 +20,18 @@ class UsersController < ApplicationController
 			access_token: @@access_token,
 			avatar_url: user['avatar_url'],
 			repos_count: user['public_repos']}
-			user = User.updateOrCreate(user_info)
+			user = User.find_or_create_by(login: user_info['login'])
 			redirect_to "/sessions/#{user.id}/create"
           # decide whether or not to add repos at this time
         end
 
-        def show
-        	@user = User.where(params[:id])
-        	@repo = Octokit.repo("AmalHussein/wdi_project_2")
-    # @repos = @user.repos
-    # @repos.sort! {|a,b| a.main_language <=> b.main_language}
-    # @repos = @user.repos.to_json.html_safe
-    # @user = @user.to_json.html_safe
-  end
+  #       def show
+  #       	@user = User.where(params[:id])
+  #       	@repo = Octokit.repo("AmalHussein/wdi_project_2")
+  #   # @repos = @user.repos
+  #   # @repos.sort! {|a,b| a.main_language <=> b.main_language}
+  #   # @repos = @user.repos.to_json.html_safe
+  #   # @user = @user.to_json.html_safe
+  # end
 
 end
