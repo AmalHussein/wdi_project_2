@@ -2,8 +2,9 @@ class ResourcesController < ApplicationController
 
 	def create
     @resource = Resource.new(resource_params)
+    binding.pry
     if @resource.save
-      render json: @resource
+      respond_to :js
     else
       # failure -- what to do here?
     end

@@ -13,5 +13,17 @@
       <% end %>
     </div>
 <% end %>
+
+<div id='resource-container'>
+  <a id='resource-linkname' href="<%= resource_link %>"><%= resource_name %></a>
+  <div id='resource-description'><%= resource_desc %></div>
+</div>
+
+<form id="resources-form">
+  Title:<input type="text" id="resource-form-name" />
+  Link:<input type="text" id="resource-form-url" />
+  Body:<input type="text" id="resource-form-desc" />
+  <button id="resource-create-form" >Create Post</button>
+</form>
 </div>
 
