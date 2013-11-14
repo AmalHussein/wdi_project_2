@@ -2,8 +2,8 @@ AceEditorEmbedTest::Application.routes.draw do
  root 'repos#show'
  get '/repo/:github_user/:github_repo' => 'repos#show'
  get '/gem/:name' => 'gemms#show'
- post '/resource/create'=> 'resource#create'
- post '/resource/:id:/vote' => 'resource#vote'
+ post '/resource/create'=> 'resources#create'
+ post '/resource/:id:/vote' => 'resources#vote'
 
  #Routes for GitHub Oauth need refine and clean up
  get '/callback' => 'users#callback'
