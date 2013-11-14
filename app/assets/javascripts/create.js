@@ -14,7 +14,7 @@ GitSee.ajax_resource = function(resource_name, resource_link, resource_desc, git
   // currently hardcoded to 'repo/rubygems/gems'
   var url = "/repo/" + github_user + "/" + github_repo; 
   $.ajax({
-    url: '/',
+    url: '/resource/create',
     dataType: 'json',
     data: { site_name: resource_name, 
             site_url: resource_link,
