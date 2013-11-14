@@ -6,10 +6,18 @@
 <span><%= @gemm.downloads %> downloads and counting...</span>
 
 <div>Description: <%= @gemm.description %></div>
+<div>Documentation:</div>
 
-  <a href="<%= @gemm.homepage_uri    || @gemm.documentation_url || 
+<div>Homepage: <%= @gemm.homepage_uri %></div>
+<div>RDoc: <%= @gemm.documentation_url %></div>
+<div>Wiki: <%= @gemm.wiki_uri %></div>
+<div>Mailing List: <%= @gemm.mailing_list_uri %></div>
+<div>Source: <%= @gemm.source_code_uri %></div>
+<div>Bug Tracker: <%= @gemm.bug_tracker_uri %></div>
+
+  <!--a href="<#%= @gemm.homepage_uri    || @gemm.documentation_url || 
                @gemm.wiki_uri        || @gemm.mailing_list_uri  ||
                @gemm.source_code_uri || @gemm.bug_tracker_uri   %>">
-  Documentation</a>
+  Documentation</a-->
 
 <div>Got better docs? <a href='#'>Share</a></div>
