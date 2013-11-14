@@ -24,6 +24,7 @@ GitSee.ajax_resource = function(resource_name, resource_link, resource_desc, git
       GitSee.render_resource(resource_data);
     }
   });
+  debugger;
 };
 
 GitSee.add_new_resource = function() {
@@ -32,7 +33,7 @@ GitSee.add_new_resource = function() {
       resource_desc = $('#resource-form-desc').val(),
       github_user = 'rubygems', // currently
       github_repo = 'gems';     // hardcoded
-  debugger;
+  
   $('#resource-form-name').val('');
   $('#resource-form-url').val('');
   $('#resource-form-desc').val('');
