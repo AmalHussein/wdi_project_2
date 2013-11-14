@@ -1,7 +1,8 @@
 body {
-  margin: 0px;
+  margin: 0 auto;
   font-family: 'Helvetica Neue';
-  background: #EEE657;
+  background: #ECF0F1;
+  display: block;
 }
 
 a {
@@ -27,44 +28,70 @@ a {
   background-color: #95A5A6;
   position: absolute;
 
+
 }
 
-  .circle {
-    height: 30px;
-    width: 30px;
-    border-radius: 200px;
-    /*background-color: #2ECC71;*/
-    background: #EEE657;
+#background-sub-header {
+  margin: 0 auto;
+  width: 100%;
+  height: 35px;
+  background-color: #7F8C8D;
+  /*need to fix, hacky solution: */
+  margin-top: 70px;
+  display: block;
+  position:absolute;
 
-    margin:20px;
-    float:left;
-  }
-  .h-left-vertical-line {
-    height: 70px;
-    width: 5px;
-    float: left;
-    border-left: 1px solid #7F8C8D;
-    margin-right: 5px;
-  }
+}
 
-  .h-right-vertical-line {
-    height: 70px;
-    width: 5px;
-    float: right;
-    border-left: 1px solid #7F8C8D;
-    margin-right: 5px;
-  }
+.sub-header {
+  margin: 0 auto;
+  width: 1200px;
+  height: 35px;
+  background-color: #7F8C8D;
+  /*need to fix, hacky solution: */
+  margin-top: 70px;
+  display: block;
+  position:absolute;
+
+}
+
+.circle {
+  height: 30px;
+  width: 30px;
+  border-radius: 200px;
+  /*background-color: #2ECC71;*/
+  background: #FC6042;
+
+  margin:20px;
+  float:left;
+}
+.h-left-vertical-line {
+  height: 70px;
+  width: 5px;
+  float: left;
+  border-left: 1px solid #7F8C8D;
+  margin-right: 5px;
+}
+
+.h-right-vertical-line {
+  height: 70px;
+  width: 5px;
+  float: right;
+  border-left: 1px solid #7F8C8D;
+  margin-right: 5px;
+}
 
 #logo {
-    font-size: 50px;
-    color: #ECF0F1;
-    float:left;
+  font-size: 50px;
+  color: #ECF0F1;
+  float:left;
 
 }
 
-  #logo span{
-    font-weight: 300;
-  }
+#logo span{
+  font-weight: 300;
+}
+
 
 
 
@@ -77,5 +104,40 @@ a {
 
 }
 
+.search-field {
+  border-radius: 5px;
+  margin: 10px;
+  float: right;
+  width: 250px;
+}
 
+#main-content {
+  width:400px;
+  height: 800px;
+  position: absolute;
+  margin:auto;
+}
+
+#repo-name {
+  width: 100%;
+  position: absolute;
+  color: #7F8C8D;
+ 
+  font-size: 40px;
+  /*hack solution, fix please*/
+  display: block;
+  margin: 0 auto;
+  margin-top: 155px;
+  text-align: center;
+  float: left;
+  /*header + sub-header = 105*/
+} 
+
+#repo-info {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: relative;
+
+}
 
