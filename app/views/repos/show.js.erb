@@ -8,3 +8,11 @@ history.pushState(GitSee.stateObj,
 $('#repo-title').html('<%= @repo.repo_name %>');
 $('.gems').val('');
 $('.gems').html("<%= escape_javascript( render partial: "gemms/gemm", collection: @repo.gemms ) %>");
+
+$('.gem-resources').hide();
+
+// Setup a click event on the gem, so when they are clicked, they show all gem-resources
+
+$('.gem-name').on('click', function(){
+	$('.gem-resources').toggle();
+})
