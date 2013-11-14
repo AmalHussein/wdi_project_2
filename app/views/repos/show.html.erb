@@ -1,12 +1,15 @@
 <div>
-  <form id="search-box">
-    GitHub User:<input type="text" id="github_user" />
-    Github Repo:<input type="text" id="github_repo" />
-    <button id="search-button" >FIND GEMS</button>
-  </form>
+  <%= form_tag '/repo', remote: true, method: 'get' do %>
+    <%= label_tag "github user" %>
+    <%= text_field_tag :github_user %>
+    <%= label_tag "github repo" %>
+    <%= text_field_tag :github_repo %>
+    <%= submit_tag "Search" %>
+  <% end %> 
+
 </div>
 
-<h1><%= @repo.repo_name %></h1>
+<h1 id="repo-title"><%= @repo.repo_name %></h1>
 
 <div class="gems">
   <h5>Gems</h5>
