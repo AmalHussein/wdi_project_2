@@ -10,11 +10,14 @@ GitSee.render_gems = function(gemm_data) {
     "<div>" + gem.project_url + "</div>" 
     + "</div>");
   })
-   alert('hi from success story!');
+    var github_user = $('#github_user').val(" "),
+      github_repo = $('#github_repo').val(" ");
+  
 };
 
 GitSee.jquery_ajax_load = function(github_user, github_repo) { 
   var url = "/repo/" + github_user + "/" + github_repo; 
+  debugger;
   $.ajax({
     url: url, 
     dataType: 'json', 
