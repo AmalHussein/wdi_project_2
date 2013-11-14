@@ -4,7 +4,9 @@ class ResourcesController < ApplicationController
     @resource = Resource.new(resource_params)
     binding.pry
     if @resource.save
-      respond_to :js
+      respond_to do |format|
+        format.js
+      end
     else
       # failure -- what to do here?
     end
@@ -12,7 +14,7 @@ class ResourcesController < ApplicationController
 
 
 
-	#add in method for up and downs of resources
+	# add in method for up and downs of resources
 	def vote
 	end
 

@@ -32,7 +32,6 @@ GitSee.add_new_resource = function() {
       resource_desc = $('#resource-form-desc').val(),
       github_user = 'rubygems', // currently
       github_repo = 'gems';     // hardcoded
-      debugger;
 
   $('#resource-form-name').val('');
   $('#resource-form-url').val('');
@@ -43,7 +42,8 @@ GitSee.add_new_resource = function() {
 
 
 $(function() {
-  $('resource-create-form').click(function(e){
+  $('#resource-create-form').click(function(e){
+    debugger;
     e.preventDefault();
     GitSee.add_new_resource();
   });
