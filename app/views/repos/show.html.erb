@@ -1,4 +1,12 @@
-<%= @repo.repo_name %>
+<div>
+  <form id="search-box">
+    GitHub User:<input type="text" id="github_user" />
+    Github Repo:<input type="text" id="github_repo" />
+    <button id="search-button" >FIND GEMS</button>
+  </form>
+</div>
+
+<h1><%= @repo.repo_name %></h1>
 
 <div class="gems">
 <% @repo.gemms.each do |gemm| %>
@@ -13,5 +21,7 @@
       <% end %>
     </div>
 <% end %>
-</div>
+
+  </div>
+
 

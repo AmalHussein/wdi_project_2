@@ -6,6 +6,9 @@ class ReposController < ApplicationController
     respond_with @repo 
   end 
 
+
+
+
   #not using just reference, 
   # def repos	
   # 	github = Github.new client_id: ENV['CLIENT_ID'] , client_secret: ENV['CLIENT_SECRET']
