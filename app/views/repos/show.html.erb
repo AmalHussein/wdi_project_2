@@ -9,19 +9,25 @@
 <h1><%= @repo.repo_name %></h1>
 
 <div class="gems">
-<% @repo.gemms.each do |gemm| %>
+  <% @repo.gemms.each do |gemm| %>
   <div class="gem">
     <div class="gem-name"><h4>Name:<%= gemm.name %></h4></div>
     <div class="gem-docs">Docs: <%= gemm.documentation_url %></div>
     <div class="project-uri">Project URI: <%= gemm.project_url %></div>
     <div class="gem-resources">
       <h5>Resources</h5>
-      <% gemm.resources.each do |resource| %>
-        <div class="gem-resource"><%= link_to resource.site_name, resource.site_url %> </div>
+      <%= render partial: "resources/resource", collection: gemm.resources %>
+    </div>
+    <div class="resource-form">
+      <%= form_for gemm.resources.build, url: create_resource_path, remote: true do |f| %>
+        <%= f.hidden_field :gemm_id, value: gemm.id %>
+        <%= f.label :site_name %>
+        <%= f.text_field :site_name %>
+        <%= f.label :site_url %>
+        <%= f.text_field :site_url %>
+        <%= f.submit "New Link" %>
       <% end %>
     </div>
-<% end %>
-
   </div>
-
-
+  <% end %>
+</div>
