@@ -3,15 +3,15 @@ class ReposController < ApplicationController
   def show 
     @resource = Resource.new
     @repo = Repo.find_or_create_by(repo_username: params[:github_user], repo_name: params[:github_repo])
-<<<<<<< HEAD
-    respond_with @repo 
-    binding.pry
-=======
+
+
+    
+
     respond_to do |format|
       format.js
       format.html {@repo}
     end 
->>>>>>> 9c860464b4feaa4d23a4dbefe0bfd083db881835
+
   end 
 
 
