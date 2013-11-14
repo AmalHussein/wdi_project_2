@@ -9,7 +9,7 @@
 <h1><%= @repo.repo_name %></h1>
 
 <div class="gems">
-<% @repo.gemms.each do |gemm| %>
+  <% @repo.gemms.each do |gemm| %>
   <div class="gem">
     <div class="gem-name"><h4>Name:<%= gemm.name %></h4></div>
     <div class="gem-docs">Docs: <%= gemm.documentation_url %></div>
@@ -17,18 +17,19 @@
     <div class="gem-resources">
       <h5>Resources</h5>
       <% gemm.resources.each do |resource| %>
-        <div class="gem-resource"><%= link_to resource.site_name, resource.site_url %> </div>
+      <div class="gem-resource"><%= link_to resource.site_name, resource.site_url %> </div>
       <% end %>
     </div>
-<% end %>
+    <% end %>
 
-<div id='resource-container'>
-</div>
+    <div id='resource-container'>
+    </div>
 
-<form id="resources-form">
-  Title:<input type="text" id="resource-form-name" />
-  Link:<input type="text" id="resource-form-url" />
-  Body:<input type="text" id="resource-form-desc" />
-  <button id="resource-create-form" data-remote='true'>Create Post</button>
-</form>
+    <form id="resources-form">
+      Title:<input type="text" id="resource-form-name" />
+      Link:<input type="text" id="resource-form-url" />
+      Body:<input type="text" id="resource-form-desc" />
+      <button id="resource-create-form" data-remote='true'>Create Post</button>
+    </form>
+  </div>
 </div>
