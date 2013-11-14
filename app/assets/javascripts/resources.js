@@ -1,8 +1,13 @@
 var GitSee = {};
 
 GitSee.render_resource = function(resource_data) {
-  $('resource-container')
-}
+  $('resource-container').append(
+    "<div id=\"post-" + resource_data.id + "\">" +
+    "<div>" + resource_data.site_name + "</div>" +
+    "<div>" + resource_data.site_url + "</div>" +
+    "<div>" + resource_data.site_description + "</div>"
+  );
+};
 
 GitSee.ajax_resource = function(github_user, github_repo, resource_name, resource_link, resource_desc) {
   var url = "/repo/" + github_user + "/" + github_repo;
