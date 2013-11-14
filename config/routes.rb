@@ -7,7 +7,7 @@ AceEditorEmbedTest::Application.routes.draw do
 	post '/resource/:id:/vote' => 'resources#vote'
 
 	#Routes for GitHub Oauth need refine and clean up
-	get '/callback' => 'users#callback'
+	get '/users/callback' => 'users#callback'
 	get '/sessions/:id/create' => 'sessions#create', as: 'create_user_session'
 	get '/sessions/:id/destroy' => 'sessions#destroy', as: 'destroy_user_session'
 	get '/users/create' => 'users#create', as: 'create_user'
