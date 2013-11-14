@@ -1,19 +1,14 @@
-  function accordion(){
-  var toggle = $(".accordion-toggle");
-  var content = $(".accordion-content");
-  content.hide();
-  content.first().show();
-  toggle.on("click", function(e){
-    e.preventDefault();
-    var targetContent = $(this).attr("href");
-    content.slideUp();
-    $(targetContent).slideDown();
-  });
-}
+$(document).ready(function(){
 
-$(function() {
-  accordion();
+  $('.gem-docs').hide();
+  $('.gem-resources').hide();
+
+  $('.gem-name h4').click(function(e){
+   e.preventDefault();
+   $('.gem-docs').show();
+  })
+
+
+
+
 });
-  
-
-
