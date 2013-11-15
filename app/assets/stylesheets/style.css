@@ -3,9 +3,21 @@
 }
 
 a {
-	color:blue;
+  color:blue;
 }
 
 A[href=""] {
   display: none;
+}
+
+div.gems {
+  margin-left: 25px;
+}
+
+div.gem {
+  height: 240px;
+  width: 460px;
+  float: left;
+  border: 1px solid black;
+  overflow: scroll;
 }
