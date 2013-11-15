@@ -10,8 +10,18 @@ AceEditorEmbedTest::Application.routes.draw do
 	get '/users/callback' => 'users#callback'
 	get '/sessions/:id/create' => 'sessions#create', as: 'create_user_session'
 	get '/sessions/:id/destroy' => 'sessions#destroy', as: 'destroy_user_session'
-	get 'users/load', to: 'users#load', as: 'load_user'
 	get '/users/create' => 'users#create', as: 'create_user'
 	get '/users/:id' => 'users#show', as: 'user'
 	get '/select/:login' => 'welcome#select', as: 'select'
 end
+
+
+
+
+
+
+
+
+
+
+
