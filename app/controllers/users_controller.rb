@@ -14,70 +14,35 @@ class UsersController < ApplicationController
 
 	def create
 		github_user = JSON.parse(RestClient.get("https://api.github.com/user", {params: {:access_token => @@access_token}}))
-			user = User.where(login: github_user['login']).first
-			binding.pry
-			unless user
-				user = User.create!(login: github_user['login'], github_id: github_user['id'], url: github_user['url'])
-			end
-			binding.pry
-			# user = User.find_or_create_by(login: user_info['login'])
-			redirect_to "/sessions/#{user.id}/create"
-    end
+		user = User.where(login: github_user['login']).first
+		unless user
+			user = User.create!(
+				login: github_user['login'],
+				github_id: github_user['id'],
+				url: github_user['url'] , 
+				avatar_url: github_user['avatar_url'],
+				gravatar_id: github_user['gravatar_id'] , 
+				html_url: github_user['html_url'], 
+				followers_url: ['followers_url'] ,
+				following_url: github_user['following_url'] , 
+				gists_url: github_user['gists_url'] , 
+				starred_url: github_user['starred_url'] , 
+				subscriptions_url: github_user['subscriptions_url'] , 
+				organizations_url: github_user['organizations_url'] , 
+				repos_url: github_user['repos_url'] , 
+				events_url: github_user['events_url'] , 
+				received_events_url: github_user['received_events_url'] , 
+				type: github_user['type'], 
+				site_admin: github_user['site_admin'] ,
+				public_repos: github_user['public_repos'],
+				followers: github_user['followers'] , 
+				following: github_user['following'], 
+				created_at: github_user['created_at'] , 
+				updated_at: github_user['updated_at'] , 
+				public_gists: github_user['public_gists']) 
 
- #  # using this to save a new user to the database, or update profile for recurring user 
-	# def load
-	# 	user = Rails.cache.fetch("#{params['access_token']}", :expires_in => 9000.seconds) do 
-	# 		JSON.parse(RestClient.get("https://api.github.com/user", {params: {:access_token => params[:access_token]}}))
-	# 	end
-
-	# 	stored_user = User.where(github_id: user['id']).first
-	# 	if stored_user
-	# 		unless stored_user.updated_at == user['updated_at']
-	# 			stored_user.update_attributes(
-	# 				name: user['name'],
-	# 				login: user['login'],
-	# 				url: user['url'],
-	# 				html_url: user['html_url'],
-	# 				repos_url: user['repos_url'],
-	# 				gists_url: user['gists_url'],
-	# 				avatar_url: user['avatar_url'],
-	# 				public_repos: user['public_repos'],
-	# 				github_id: user['id'],
-	# 				followers: user['followers'],
-	# 				following: user['following'],
-	# 				created_at: user['created_at'],
-	# 				updated_at: user['updated_at'],
-	# 				email: user['email']
-	# 			)
-	# 		end
-	# 	else
-	# 		stored_user = User.create(
-	# 			name: user['name'],
-	# 			login: user['login'],
-	# 			url: user['url'],
-	# 			html_url: user['html_url'],
-	# 			repos_url: user['repos_url'],
-	# 			gists_url: user['gists_url'],
-	# 			avatar_url: user['avatar_url'],
-	# 			public_repos: user['public_repos'],
-	# 			github_id: user['id'],
-	# 			followers: user['followers'],
-	# 			following: user['following'],
-	# 			created_at: user['created_at'],
-	# 			updated_at: user['updated_at'],
-	# 			email: user['email']
-	# 		)
-	# 	end
-	# 	redirect_to create_session_path(id: stored_user.id, access_token: params[:access_token])
-	# end
-
-  #       def show
-  #       	@user = User.where(params[:id])
-  #       	@repo = Octokit.repo("AmalHussein/wdi_project_2")
-  #   # @repos = @user.repos
-  #   # @repos.sort! {|a,b| a.main_language <=> b.main_language}
-  #   # @repos = @user.repos.to_json.html_safe
-  #   # @user = @user.to_json.html_safe
-  # end
+end
+redirect_to "/sessions/#{user.id}/create"
+end
 
 end
