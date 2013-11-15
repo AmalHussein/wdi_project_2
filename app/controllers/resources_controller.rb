@@ -10,8 +10,7 @@ class ResourcesController < ApplicationController
     else
       flash.now.alert = "Link Didn't Save. Check the link and try again!"
     end
-	end 
-
+  end 
 
 	# add in method for up and downs of resources
 	def vote
@@ -25,18 +24,17 @@ class ResourcesController < ApplicationController
     else 
      flash.now.alert = "Try again, and make sure your logged in to vote!"
 
-    end
-  end 
+   end
+ end 
 
+ private
 
-  private
+ def resource_params
+  params.require(:resource).permit(:site_name, :site_url, :gemm_id , :user_id)
+end
 
-  def resource_params
-    params.require(:resource).permit(:site_name, :site_url, :gemm_id , :user_id)
-  end
-
-  def vote_params
-    params.require(:vote).permit(:up, :down , :total_votes :user_id , :resource_id)
-  end 
+def vote_params
+  params.require(:vote).permit(:up, :down , :total_votes :user_id , :resource_id)
+end 
 
 end

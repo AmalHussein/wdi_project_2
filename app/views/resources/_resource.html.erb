@@ -2,4 +2,5 @@
 <div id="gem-resources-<%=resource.id%>">
 
 	<%= link_to resource.site_name, resource.site_url %>
+	<%= button_to "Upvote", controller: 'resources', action: "vote", @vote.user remote: true %>
 </div>
