@@ -37,8 +37,8 @@ class UsersController < ApplicationController
 				public_repos: github_user['public_repos'],
 				followers: github_user['followers'] , 
 				following: github_user['following'], 
-				created_at: github_user['created_at'] , 
-				updated_at: github_user['updated_at'] , 
+				created_profile: github_user['created_at'] , 
+				last_updated_at: github_user['updated_at'] , 
 				public_gists: github_user['public_gists']) 
 
 end
