@@ -23,7 +23,6 @@ class ResourcesController < ApplicationController
       end
     else 
      flash.now.alert = "Try again, and make sure your logged in to vote!"
-
    end
  end 
 
@@ -34,7 +33,7 @@ class ResourcesController < ApplicationController
 end
 
 def vote_params
-  params.require(:vote).permit(:up, :down , :total_votes :user_id , :resource_id)
+  params.require(:vote).permit(:up, :down , :total_votes , :user_id , :resource_id)
 end 
 
 end
