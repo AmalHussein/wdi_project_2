@@ -16,34 +16,38 @@
     <div class="h-left-vertical-line"></div>
     <span id="logo">Git<span>See</span></span>
     <span id="h-filler"></span>
-    <!--    this section will change with user -->
-    <span id="dynamic-header">
+
       <div class="h-right-vertical-line"></div>
-      <span class="login-text"><a href="#">Log in</a></span>
-      <div class="h-right-vertical-line"></div>
-      <span class="login-text"><a href="#">Sign up</a></span>
-      <div class="h-right-vertical-line"></div>
-    </span>
-  </div>
-  <div id="background-sub-header"></div>
-  <div class="sub-header">
+  
   
 
 
   
 <!-- end header -->
   <% if current_user %>
-    <div class = 'nav_button user'>
+    <div class = 'nav_button '>
       <%= link_to 'Profile', user_path(current_user.id) %>
     </div>
     <div class = 'nav_button user'>
       <%= link_to 'Logout', destroy_user_session_path(current_user.id) %>
+          
     </div>
+
+    <div class="h-right-vertical-line"></div>
+
   <% else %>
+  <div class="h-right-vertical-line"></div>
     <div class = 'nav_button'>
-    <a href='https://github.com/login/oauth/authorize?client_id=<%=ENV["CLIENT_ID"]%>'>Login</a>
+         
+   <span class="login-text"> <a href='https://github.com/login/oauth/authorize?client_id=<%=ENV["CLIENT_ID"]%>'>Log in</a> </span>
+   
     </div>
+    <div class="h-left-vertical-line"></div>
+   
   <% end %>
+  </div> <!-- header -->
+  <div id="background-sub-header"></div>
+  <div class="sub-header">
   </div> <!-- end of subheader -->
 
   <%= yield %>

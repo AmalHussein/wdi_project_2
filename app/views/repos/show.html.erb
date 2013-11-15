@@ -1,36 +1,51 @@
-<div>
+<div class="main-search">
   <%= form_tag '/repo', remote: true, method: 'get' do %>
-    <%= label_tag "github user" %>
-    <%= text_field_tag :github_user %>
-    <%= label_tag "github repo" %>
-    <%= text_field_tag :github_repo %>
-    <%= submit_tag "Search" %>
+  <div id="search-tag"><%= label_tag "github user"%></div>
+  <%= text_field_tag :github_user %>
+  <%= label_tag "github repo"%>
+  <%= text_field_tag :github_repo %>
+  <div id='main-search'><%= submit_tag "Search" %></div>
   <% end %> 
+</div>
+<div class="section-reset"></div>
+<!-- experimental section -->
+<div class="canvas">
+<div class="r1c1 page"></div>
+<div class="r1c2 page"></div>
+<div class="r1c3 page"></div>
+<div class="r2c1 page"></div>
+<div class="r2c2 page"></div>
+<div class="r2c3 page"></div>
+</div>
 
 
+
+
+
+<!-- end experimental section -->
 <div class="gems">
-<% @repo.gemms.each do |gemm| %>
+  <% @repo.gemms.each do |gemm| %>
   <div class="gem">
-    
-      <div class="gem-name"><h4><%= gemm.name %></h4></div>
-  
- 
+
+    <div class="gem-name"><h4><%= gemm.name %></h4></div>
+
+
     <div class="gem-docs">Docs: <%= gemm.documentation_url %></div>
     <div class="project-uri">Project URI: <%= gemm.project_url %></div>
     <div class="gem-resources">
       <h5 class="centered ten columns">Resources</h5> 
       <% gemm.resources.each do |resource| %>
-        <div class="gem-resource"><%= link_to resource.site_name, resource.site_url %> </div>
+      <div class="gem-resource"><%= link_to resource.site_name, resource.site_url %> </div>
       <% end %>
-   
-<% end %>
+
+      <% end %>
+    </div>
+
   </div>
+  <div id="peace-of-mind"></div>
+  <h1 id="repo-title"><%= @repo.repo_name %></h1>
 
-</div>
-
-<h1 id="repo-title"><%= @repo.repo_name %></h1>
-
-<div class="gems">
-  <h5>Gems</h5>
-  <%= render partial: "gemms/gemm", collection: @repo.gemms %>
-</div>
+  <div class="gems">
+    <h5>Gems</h5>
+    <%= render partial: "gemms/gemm", collection: @repo.gemms %>
+  </div>
