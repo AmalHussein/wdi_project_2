@@ -8,8 +8,10 @@ AceEditorEmbedTest::Application.routes.draw do
 
 	#Routes for GitHub Oauth need refine and clean up
 	get '/users/callback' => 'users#callback'
+	get 'sessions/create', to: 'sessions#create', as: 'create_session'
+  get 'sessions/destroy', to: 'sessions#destroy', as: 'sessions_destroy'
 	get '/sessions/:id/create' => 'sessions#create', as: 'create_user_session'
-	get '/sessions/:id/destroy' => 'sessions#destroy', as: 'destroy_user_session'
+	# get '/sessions/:id/destroy' => 'sessions#destroy', as: 'destroy_user_session'
 	get 'users/load', to: 'users#load', as: 'load_user'
 	get '/users/create' => 'users#create', as: 'create_user'
 	get '/users/:id' => 'users#show', as: 'user'
