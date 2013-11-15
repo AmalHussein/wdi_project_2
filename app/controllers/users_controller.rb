@@ -23,7 +23,7 @@ class UsersController < ApplicationController
 				avatar_url: github_user['avatar_url'],
 				gravatar_id: github_user['gravatar_id'] , 
 				html_url: github_user['html_url'], 
-				followers_url: ['followers_url'] ,
+				followers_url: github_user['followers_url'] ,
 				following_url: github_user['following_url'] , 
 				gists_url: github_user['gists_url'] , 
 				starred_url: github_user['starred_url'] , 
@@ -40,7 +40,6 @@ class UsersController < ApplicationController
 				created_profile: github_user['created_at'] , 
 				last_updated_at: github_user['updated_at'] , 
 				public_gists: github_user['public_gists']) 
-
 end
 redirect_to "/sessions/#{user.id}/create"
 end
