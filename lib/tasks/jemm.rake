@@ -9,7 +9,7 @@ namespace :gemlist do
       f.each_line { |line| gemlist << line.split(' ').first }
     end
 
-    gemlist.sample(200).each do |jem|
+    gemlist.each do |jem|
       begin
         gem_digest = Gems.search(jem).first
         puts "Importing: #{gem_digest["name"]}"
