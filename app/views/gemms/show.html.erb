@@ -1,12 +1,22 @@
 <h1>Gem Page</h1>
 
-<div><%= @gemm.name %></div>
-<div><%= @gemm.id %></div>
-<div><%= @gemm.documentation_url %></div>
-<div><%= @gemm.frequency %></div>
-<div><%= @gemm.category %></div>
-<div><%= @gemm.description %></div>
-<div><%= @gemm.downloads %></div>
-<div><%= @gemm.version %></div>
-<div><%= @gemm.project_url %></div>
+<% if @gemm.project_url.blank? %>
+  <span><%= @gemm.real_name || @gemm.name %></span>
+<% else %>
+  <a href="<%= @gemm.project_url %>"><%= @gemm.real_name || @gemm.name %></a>
+<% end %>
+<span>v. <%= @gemm.version %></span><br />
+<a href="<%= @gemm.gem_uri %>">Get it</a>
+<span><%= @gemm.downloads %> downloads and counting...</span>
 
+<div>Description: <%= @gemm.description %></div>
+<div>Documentation:</div>
+
+<a class='docbox' href="<%= @gemm.homepage_uri %>">Homepage</a>
+<a class='docbox' href="<%= @gemm.documentation_url %>">Main Doc</a>
+<a class='docbox' href="<%= @gemm.wiki_uri %>">Wiki</a>
+<a class='docbox' href="<%= @gemm.mailing_list_uri %>">Mailing List</a>
+<a class='docbox' href="<%= @gemm.source_code_uri %>">Source Code</a>
+<a class='docbox' href="<%= @gemm.bug_tracker_uri %>">Bug Tracker</a>
+
+<div>Got better docs? <a href='#'>Share</a></div>
