@@ -1,6 +1,10 @@
 <h1>Gem Page</h1>
 
-<a href="#<%#= @gemm.project_url %>"><%= @gemm.real_name || @gemm.name %></a>
+<% if @gemm.project_url.blank? %>
+  <span><%= @gemm.real_name || @gemm.name %></span>
+<% else %>
+  <a href="<%= @gemm.project_url %>"><%= @gemm.real_name || @gemm.name %></a>
+<% end %>
 <span>v. <%= @gemm.version %></span><br />
 <a href="<%= @gemm.gem_uri %>">Get it</a>
 <span><%= @gemm.downloads %> downloads and counting...</span>
@@ -8,19 +12,11 @@
 <div>Description: <%= @gemm.description %></div>
 <div>Documentation:</div>
 
-<!--Need to convert to actual clickable links
-    Update gemms.js accordingly. -->
-
 <a class='docbox' href="<%= @gemm.homepage_uri %>">Homepage</a>
 <a class='docbox' href="<%= @gemm.documentation_url %>">Main Doc</a>
 <a class='docbox' href="<%= @gemm.wiki_uri %>">Wiki</a>
 <a class='docbox' href="<%= @gemm.mailing_list_uri %>">Mailing List</a>
 <a class='docbox' href="<%= @gemm.source_code_uri %>">Source Code</a>
 <a class='docbox' href="<%= @gemm.bug_tracker_uri %>">Bug Tracker</a>
-
-  <!--a href="<#%= @gemm.homepage_uri    || @gemm.documentation_url || 
-               @gemm.wiki_uri        || @gemm.mailing_list_uri  ||
-               @gemm.source_code_uri || @gemm.bug_tracker_uri   %>">
-  Documentation</a-->
 
 <div>Got better docs? <a href='#'>Share</a></div>
