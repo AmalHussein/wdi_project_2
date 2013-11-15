@@ -26,7 +26,7 @@ namespace :gemlist do
                     mailing_list_uri: gem_digest["mailing_list_uri"],
                     source_code_uri: gem_digest["source_code_uri"],
                     bug_tracker_uri: gem_digest["bug_tracker_uri"], 
-                    project_url: gem_digest["project_uri"])
+                    project_url: gem_digest["project_uri"],
                     documentation_url: gem_digest["documentation_uri"],
                     mailing_list_uri: gem_digest["mailing_list_uri"],
                     source_code_uri: gem_digest["source_code_uri"],
