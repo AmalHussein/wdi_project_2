@@ -10,6 +10,10 @@ A[href=""] {
   display: none;
 }
 
+#repo-title {
+  text-align: center;
+}
+
 div.gems {
   margin-left: 25px;
 }
@@ -20,4 +24,8 @@ div.gem {
   float: left;
   border: 1px solid black;
   overflow: scroll;
+}
+
+#search-repos {
+  text-align: center;
 }

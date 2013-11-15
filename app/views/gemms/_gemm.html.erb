@@ -1,7 +1,12 @@
 <div class="gem" id='gem-<%= gemm.id %>'>
+
+  <!-- start moving contents of show.html.erb in here.
+       it's not liking the .blank? called on @gemm.project ??? -->
+  
   <div class="gem-name"><h4>Name:<%= gemm.name %></h4></div>
   <div class="gem-docs">Docs: <%= gemm.documentation_url %></div>
   <div class="project-uri">Project URI: <%= gemm.project_url %></div>
+
   <div class="gem-resources">
     <h3>Resources</h3>
     <%= render partial: "resources/resource", collection: gemm.resources %>
