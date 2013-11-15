@@ -21,7 +21,7 @@ class Repo < ActiveRecord::Base
 		# Regex/parse the gemfile's data to get an array of gems
     gemm_list = mine_gems
 		gemm_list.each do |gemm|
-			self.gemms << Gemm.find_or_create_by(name: gemm)
+			self.gemms << Gemm.create!(name: gemm)
 		end
 	end
 
