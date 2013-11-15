@@ -8,12 +8,12 @@
   </div>
   <div class="resource-form">
     <%= form_for gemm.resources.build, url: create_resource_path, remote: true do |f| %>
-      <%= f.hidden_field :gemm_id, value: gemm.id %>
-      <%= f.label :site_name %>
-      <%= f.text_field :site_name %>
-      <%= f.label :site_url %>
-      <%= f.text_field :site_url %>
-      <%= f.submit "New Link" %>
+    <%= f.hidden_field :gemm_id, value: gemm.id %>
+    <%= f.label :site_name %>
+    <%= f.text_field :site_name %>
+    <%= f.label :site_url %>
+    <%= f.text_field :site_url %>
+    <%= f.submit "New Link" %>
     <% end %>
   </div>
 </div> 
