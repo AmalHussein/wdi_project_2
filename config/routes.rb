@@ -14,3 +14,14 @@ AceEditorEmbedTest::Application.routes.draw do
 	get '/users/:id' => 'users#show', as: 'user'
 	get '/select/:login' => 'welcome#select', as: 'select'
 end
+
+
+
+
+
+
+
+
+
+
+

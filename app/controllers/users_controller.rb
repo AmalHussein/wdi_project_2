@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+	respond_to :html, :json
+
+	def show
+		@user = User.find(params[:id])
+	end 
 
 	def callback
 		result = RestClient.post("https://github.com/login/oauth/access_token",
@@ -13,25 +18,35 @@ class UsersController < ApplicationController
 	end
 
 	def create
-		user = JSON.parse(RestClient.get("https://api.github.com/user", {params: {:access_token => @@access_token}}))
-		user_info = {name: user['name'],
-			login: user['login'],
-			email: user['email'],
-			access_token: @@access_token,
-			avatar_url: user['avatar_url'],
-			repos_count: user['public_repos']}
-			user = User.find_or_create_by(login: user_info['login'])
-			redirect_to "/sessions/#{user.id}/create"
-          # decide whether or not to add repos at this time
-        end
-
-  #       def show
-  #       	@user = User.where(params[:id])
-  #       	@repo = Octokit.repo("AmalHussein/wdi_project_2")
-  #   # @repos = @user.repos
-  #   # @repos.sort! {|a,b| a.main_language <=> b.main_language}
-  #   # @repos = @user.repos.to_json.html_safe
-  #   # @user = @user.to_json.html_safe
-  # end
+		github_user = JSON.parse(RestClient.get("https://api.github.com/user", {params: {:access_token => @@access_token}}))
+		user = User.where(login: github_user['login']).first
+		unless user
+			user = User.create!(
+				login: github_user['login'],
+				github_id: github_user['id'],
+				url: github_user['url'] , 
+				avatar_url: github_user['avatar_url'],
+				gravatar_id: github_user['gravatar_id'] , 
+				html_url: github_user['html_url'], 
+				followers_url: github_user['followers_url'] ,
+				following_url: github_user['following_url'] , 
+				gists_url: github_user['gists_url'] , 
+				starred_url: github_user['starred_url'] , 
+				subscriptions_url: github_user['subscriptions_url'] , 
+				organizations_url: github_user['organizations_url'] , 
+				repos_url: github_user['repos_url'] , 
+				events_url: github_user['events_url'] , 
+				received_events_url: github_user['received_events_url'] , 
+				type: github_user['type'], 
+				site_admin: github_user['site_admin'] ,
+				public_repos: github_user['public_repos'],
+				followers: github_user['followers'] , 
+				following: github_user['following'], 
+				created_profile: github_user['created_at'] , 
+				last_updated_at: github_user['updated_at'] , 
+				public_gists: github_user['public_gists']) 
+end
+redirect_to "/sessions/#{user.id}/create"
+end
 
 end
